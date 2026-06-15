@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+         id="WebApp_ID" version="3.1">
+    
+    <display-name>EmployeeManagementSystem</display-name>
+    
+    <!-- ============================================ -->
+    <!-- AUTHENTICATION SERVLET                       -->
+    <!-- ============================================ -->
+    
+    <!-- Login Servlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.ems.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- ============================================ -->
+    <!-- ADMIN CRUD SERVLETS                          -->
+    <!-- ============================================ -->
+    
+    <!-- Add Employee Servlet -->
+    <servlet>
+        <servlet-name>AddEmployeeServlet</servlet-name>
+        <servlet-class>com.ems.servlet.AddEmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddEmployeeServlet</servlet-name>
+        <url-pattern>/add-employee</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Employee List Servlet (with Pagination & Sorting) -->
+    <servlet>
+        <servlet-name>EmployeeListServlet</servlet-name>
+        <servlet-class>com.ems.servlet.EmployeeListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeListServlet</servlet-name>
+        <url-pattern>/employee-list</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Update Employee Servlet -->
+    <servlet>
+        <servlet-name>UpdateEmployeeServlet</servlet-name>
+        <servlet-class>com.ems.servlet.UpdateEmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateEmployeeServlet</servlet-name>
+        <url-pattern>/update-employee</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Delete Employee Servlet -->
+    <servlet>
+        <servlet-name>DeleteEmployeeServlet</servlet-name>
+        <servlet-class>com.ems.servlet.DeleteEmployeeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteEmployeeServlet</servlet-name>
+        <url-pattern>/delete-employee</url-pattern>
+    </servlet-mapping>
+    
+    <!-- ============================================ -->
+    <!-- EMPLOYEE VIEW SERVLETS                        -->
+    <!-- ============================================ -->
+    
+    <!-- Employee Profile Servlet -->
+    <servlet>
+        <servlet-name>EmployeeProfileServlet</servlet-name>
+        <servlet-class>com.ems.servlet.EmployeeProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeProfileServlet</servlet-name>
+        <url-pattern>/employee-profile</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Employee Salary Servlet -->
+    <servlet>
+        <servlet-name>EmployeeSalaryServlet</servlet-name>
+        <servlet-class>com.ems.servlet.EmployeeSalaryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeSalaryServlet</servlet-name>
+        <url-pattern>/employee-salary</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Employee Announcements Servlet -->
+    <servlet>
+        <servlet-name>EmployeeAnnouncementsServlet</servlet-name>
+        <servlet-class>com.ems.servlet.EmployeeAnnouncementsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeAnnouncementsServlet</servlet-name>
+        <url-pattern>/employee-announcements</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Employee Support Servlet -->
+    <servlet>
+        <servlet-name>EmployeeSupportServlet</servlet-name>
+        <servlet-class>com.ems.servlet.EmployeeSupportServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeSupportServlet</servlet-name>
+        <url-pattern>/employee-support</url-pattern>
+    </servlet-mapping>
+    
+    <!-- ============================================ -->
+    <!-- WELCOME PAGE                                 -->
+    <!-- ============================================ -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <!-- ============================================ -->
+    <!-- SESSION CONFIGURATION                        -->
+    <!-- ============================================ -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    
+    <!-- ============================================ -->
+    <!-- ERROR PAGES                                  -->
+    <!-- ============================================ -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/login.jsp</location>
+    </error-page>
+    
+    <error-page>
+        <error-code>500</error-code>
+        <location>/login.jsp</location>
+    </error-page>
+    
+</web-app>
